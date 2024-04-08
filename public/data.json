@@ -1,0 +1,118 @@
+[
+  {
+    "id": 1,
+    "estate_title": "Office Buildings",
+    "segment_name": "Office Space",
+    "description": "These office buildings offer a professional environment with modern amenities, ideal for businesses seeking a prestigious location. They feature spacious interiors, advanced technological infrastructure, and convenient access to transportation hubs.",
+    "price": "$5,000,000",
+    "status": "sale",
+    "image": "office_building_image_url",
+    "area": "20,000 sq ft",
+    "location": "Downtown Business District",
+    "facilities": ["Conference Rooms", "Cafeteria", "Parking Garage"]
+  },
+  {
+    "id": 2,
+    "estate_title": "Retail Spaces",
+    "segment_name": "Retail Space",
+    "description": "These retail spaces are strategically located in high-traffic areas, offering prime storefront visibility and foot traffic. Ideal for retail businesses, they provide versatile layouts, ample storage, and customizable interiors to showcase products and attract customers.",
+    "price": "$10,000/month",
+    "status": "rent",
+    "image": "retail_storefront_image_url",
+    "area": "2,500 sq ft",
+    "location": "Main Street",
+    "facilities": ["Storefront Display", "Storage Room", "Restroom"]
+  },
+  {
+    "id": 3,
+    "estate_title": "Warehouses",
+    "segment_name": "Industrial Space",
+    "description": "These warehouses offer expansive storage and distribution solutions for businesses requiring industrial space. Featuring high ceilings, loading docks, and flexible layouts, they are ideal for manufacturing, logistics, and inventory management operations.",
+    "price": "$3,500,000",
+    "status": "sale",
+    "image": "industrial_warehouse_image_url",
+    "area": "50,000 sq ft",
+    "location": "Industrial Park",
+    "facilities": ["Loading Docks", "High Ceilings", "Office Space"]
+  },
+  {
+    "id": 4,
+    "estate_title": "Industrial Facilities",
+    "segment_name": "Industrial Space",
+    "description": "These specialized industrial facilities provide tailored solutions for manufacturing processes and operations. Equipped with state-of-the-art machinery, assembly lines, and warehouse space, they offer efficiency and scalability for industrial businesses.",
+    "price": "$7,000,000",
+    "status": "sale",
+    "image": "industrial_facilities_image_url",
+    "area": "75,000 sq ft",
+    "location": "Industrial Zone",
+    "facilities": [
+      "Manufacturing Equipment",
+      "Assembly Lines",
+      "Warehouse Space"
+    ]
+  },
+  {
+    "id": 5,
+    "estate_title": "Restaurants",
+    "segment_name": "Food & Beverage",
+    "description": "These restaurants provide turnkey solutions for culinary entrepreneurs, offering fully-equipped spaces with commercial kitchens, dining areas, and bar counters. Located in vibrant dining districts, they offer the perfect ambiance for memorable dining experiences.",
+    "price": "$7,500/month",
+    "status": "rent",
+    "image": "restaurant_space_image_url",
+    "area": "3,000 sq ft",
+    "location": "Restaurant Row",
+    "facilities": ["Commercial Kitchen", "Dining Area", "Bar Counter"]
+  },
+  {
+    "id": 6,
+    "estate_title": "Entertainment Venues",
+    "segment_name": "Hospitality",
+    "description": "These entertainment venues are designed to captivate audiences with live performances, events, and recreational activities. Featuring versatile spaces with stages, seating areas, and bars, they offer endless possibilities for hosting unforgettable experiences.",
+    "price": "$20,000,000",
+    "status": "sale",
+    "image": "entertainment_venue_image_url",
+    "area": "50,000 sq ft",
+    "location": "Entertainment District",
+    "facilities": ["Stage", "Seating Area", "Bar"]
+  },
+  {
+    "id": 7,
+    "estate_title": "Technology Parks",
+    "segment_name": "Tech Hub",
+    "description": "These technology parks serve as innovation hubs, providing modern office spaces and collaborative environments for tech startups and established companies. With high-speed internet, conference centers, and fitness facilities, they foster creativity and productivity.",
+    "price": "$50,000,000",
+    "status": "sale",
+    "image": "technology_park_image_url",
+    "area": "100,000 sq ft",
+    "location": "Tech District",
+    "facilities": [
+      "High-speed Internet",
+      "Conference Centers",
+      "Fitness Center"
+    ]
+  },
+  {
+    "id": 8,
+    "estate_title": "Commercial Land",
+    "segment_name": "Land Development",
+    "description": "This commercial land offers a lucrative opportunity for development in a high-traffic area. With its strategic location and ample space, it presents endless possibilities for investors and developers looking to capitalize on prime real estate.",
+    "price": "$2,000,000",
+    "status": "sale",
+    "image": "commercial_land_image_url",
+    "area": "5 acres",
+    "location": "Business Corridor",
+    "facilities": ["Development Potential", "Road Frontage", "Utilities Access"]
+  },
+  {
+    "id": 9,
+    "estate_title": "Medical Facilities",
+    "segment_name": "Healthcare",
+    "description": "These medical facilities provide comprehensive healthcare services in state-of-the-art environments. Equipped with advanced medical equipment, operating theaters, and patient rooms, they ensure optimal care and comfort for patients.",
+    "price": "$15,000,000",
+    "status": "sale",
+    "image": "medical_facilities_image_url",
+    "area": "60,000 sq ft",
+    "location": "Medical Campus",
+    "facilities": ["Emergency Rooms", "Operating Theaters", "Patient Rooms"]
+  }
+]
