@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
-const Estate = ({estateCard}) => {
-  const {estate_title, price, status, image, facilities, segment_name} =
-    estateCard;
+const Estate = ({item}) => {
+  const {estate_title, price, status, image, facilities, segment_name} = item;
   return (
     <div>
       <div className="border rounded-2xl">
@@ -39,7 +38,7 @@ const Estate = ({estateCard}) => {
 };
 
 Estate.propTypes = {
-  estateCard: PropTypes.node,
+  item: PropTypes.node,
 };
 
 export default Estate;

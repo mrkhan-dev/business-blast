@@ -4,6 +4,7 @@ import {useLoaderData} from "react-router-dom";
 import Estate from "../components/Estate/Estate";
 
 const home = () => {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const estateData = useLoaderData();
   console.log(estateData);
   return (
@@ -14,7 +15,7 @@ const home = () => {
       <Banner />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:w-3/4 mx-auto">
         {estateData.map((estate) => (
-          <Estate key={estate.id} estateCard={estate}></Estate>
+          <Estate key={estate.id} item={estate}></Estate>
         ))}
       </div>
     </div>

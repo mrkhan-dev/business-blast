@@ -1,4 +1,4 @@
-import {NavLink} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 
 const Nav = () => {
   const navLink = (
@@ -57,15 +57,23 @@ const Nav = () => {
             {navLink}
           </ul>
         </div>
-        <a className="btn btn-ghost text-3xl font-semibold gap-0 text-[#1DD100]  ">
+        <Link
+          to="/"
+          className="btn btn-ghost text-3xl font-semibold gap-0 text-[#1DD100]  "
+        >
           Business <span className="text-[#FC6400]">Blast</span>
-        </a>
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 items-center">{navLink}</ul>
       </div>
       <div className="navbar-end">
-        <a className="btn">Button</a>
+        <Link
+          to="login"
+          className="btn bg-[#1DD100] text-white px-5 hover:bg-[#1DD100] text-base"
+        >
+          Login
+        </Link>
       </div>
     </div>
   );
