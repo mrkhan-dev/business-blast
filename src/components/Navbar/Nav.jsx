@@ -1,4 +1,5 @@
 import {Link, NavLink} from "react-router-dom";
+import userDefaultPic from "../../assets/user.png";
 
 const Nav = () => {
   const navLink = (
@@ -59,7 +60,7 @@ const Nav = () => {
         </div>
         <Link
           to="/"
-          className="btn btn-ghost text-3xl font-semibold gap-0 text-[#1DD100]  "
+          className="btn btn-ghost text-xl md:text-2xl lg:text-3xl font-semibold gap-0 text-[#1DD100]  "
         >
           Business <span className="text-[#FC6400]">Blast</span>
         </Link>
@@ -68,6 +69,12 @@ const Nav = () => {
         <ul className="menu menu-horizontal px-1 items-center">{navLink}</ul>
       </div>
       <div className="navbar-end">
+        <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+          <div className="w-10 rounded-full">
+            <img src={userDefaultPic} />
+          </div>
+        </label>
+
         <Link
           to="login"
           className="btn bg-[#1DD100] text-white px-5 hover:bg-[#1DD100] text-base"

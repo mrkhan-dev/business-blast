@@ -3,7 +3,7 @@ const Estate = ({item}) => {
   const {estate_title, price, status, image, facilities, segment_name} = item;
   return (
     <div>
-      <div className="border rounded-2xl">
+      <div className="border rounded-2xl mt-8">
         <div className="p-6">
           <img className="rounded-xl relative" src={image} alt="" />
           <button className="px-4 py-2 text-white rounded-bl-md rounded-tr-md absolute mt-[-40px] bg-[#FC6400]">

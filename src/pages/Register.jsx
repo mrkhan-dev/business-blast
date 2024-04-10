@@ -1,0 +1,113 @@
+import {Helmet} from "react-helmet-async";
+import {Link} from "react-router-dom";
+import {useState} from "react";
+import {FaRegEye, FaRegEyeSlash} from "react-icons/fa";
+import {useForm} from "react-hook-form";
+
+const Register = () => {
+  const [viewPassword, setViewPassword] = useState(false);
+
+  const {
+    register,
+    handleSubmit,
+    formState: {errors},
+  } = useForm();
+
+  const onSubmit = (data) => console.log(data);
+
+  return (
+    <div className="hero mt-12">
+      <Helmet>
+        <title>Register | BusinessBlast</title>
+      </Helmet>
+      <div className="hero-content flex-col">
+        <div className="text-center lg:text-left">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#1DD100]">
+            Please Register
+          </h1>
+        </div>
+        <div className="card shrink-0 w-full max-w-sm shadow-md bg-base-100 lg:w-[700px] ">
+          <form onSubmit={handleSubmit(onSubmit)} className="card-body">
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Name</span>
+              </label>
+              <input
+                type="text"
+                placeholder=" Name"
+                className="input input-bordered"
+                {...register("name", {required: true})}
+              />
+              {errors.name && (
+                <span className="text-[#FC6400] text-sm mt-1 ml-1">
+                  This field is required!
+                </span>
+              )}
+            </div>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Email</span>
+              </label>
+              <input
+                type="email"
+                placeholder="email"
+                className="input input-bordered"
+                {...register("email", {required: true})}
+              />
+              {errors.email && (
+                <span className="text-[#FC6400] text-sm mt-1 ml-1">
+                  This field is required!
+                </span>
+              )}
+            </div>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Photo URL</span>
+              </label>
+              <input
+                type="text"
+                placeholder="Photo URL"
+                className="input input-bordered"
+              />
+            </div>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Password</span>
+              </label>
+              <input
+                type={viewPassword ? "text" : "password"}
+                placeholder="password"
+                className="input input-bordered relative"
+                {...register("password", {required: true})}
+              />
+              {errors.password && (
+                <span className="text-[#FC6400] text-sm mt-1 ml-1">
+                  This field is required!
+                </span>
+              )}
+              <span
+                className="absolute mt-[50px] ml-72 cursor-pointer text-lg"
+                onClick={() => setViewPassword(!viewPassword)}
+              >
+                {viewPassword ? <FaRegEye /> : <FaRegEyeSlash />}
+              </span>
+            </div>
+            <div className="form-control mt-6">
+              <button className="btn bg-[#1DD100] hover:bg-[#1DD100] text-white">
+                Register
+              </button>
+            </div>
+          </form>
+          <p className="text-center mb-4">
+            Already have an account?{" "}
+            <Link to="/login" className="text-[#FC6400]">
+              Login
+            </Link>
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Register;

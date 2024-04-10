@@ -1,13 +1,17 @@
+import {Helmet} from "react-helmet-async";
 import {Link} from "react-router-dom";
 
 const Login = () => {
   return (
     <div className="hero mt-20">
+      <Helmet>
+        <title>Login | BusinessBlast</title>
+      </Helmet>
       <div className="hero-content flex-col">
         <div className="text-center lg:text-left">
-          <h1 className="text-5xl font-bold">Login now!</h1>
+          <h1 className="text-5xl font-bold text-[#1DD100]">Login now!</h1>
         </div>
-        <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100 lg:w-[700px] ">
+        <div className="card shrink-0 w-full max-w-sm shadow-md bg-base-100 lg:w-[700px] ">
           <form className="card-body">
             <div className="form-control">
               <label className="label">
@@ -30,19 +34,16 @@ const Login = () => {
                 className="input input-bordered"
                 required
               />
-              <label className="label">
-                <a href="#" className="label-text-alt link link-hover">
-                  Forgot password?
-                </a>
-              </label>
             </div>
             <div className="form-control mt-6">
-              <button className="btn bg-[#1DD100] text-white">Login</button>
+              <button className="btn bg-[#1DD100] hover:bg-[#1DD100] text-white">
+                Login
+              </button>
             </div>
           </form>
           <p className="text-center mb-4">
             Do not have an account?{" "}
-            <Link to="register" className="text-[#FC6400]">
+            <Link to="/register" className="text-[#FC6400]">
               Register
             </Link>
           </p>
