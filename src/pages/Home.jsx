@@ -1,12 +1,11 @@
-import {Helmet} from "react-helmet-async";
 import Banner from "../components/Banner/Banner";
 import {useLoaderData} from "react-router-dom";
 import Estate from "../components/Estate/Estate";
+import {Helmet} from "react-helmet-async";
 
 const home = () => {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
   const estateData = useLoaderData();
-  console.log(estateData);
+  // console.log(estateData);
   return (
     <div>
       <Helmet>

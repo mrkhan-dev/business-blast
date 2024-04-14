@@ -1,11 +1,13 @@
-import {Helmet} from "react-helmet-async";
 import {Link} from "react-router-dom";
-import {useState} from "react";
 import {FaRegEye, FaRegEyeSlash} from "react-icons/fa";
 import {useForm} from "react-hook-form";
+import {useContext, useState} from "react";
+import {AuthContext} from "../FirebaseProvider/AuthProvider";
+import {Helmet} from "react-helmet-async";
 
 const Register = () => {
-  const [viewPassword, setViewPassword] = useState(false);
+  const [viewPassword, setViewPassword] = useState(null);
+  const {createUser} = useContext(AuthContext);
 
   const {
     register,
@@ -13,7 +15,16 @@ const Register = () => {
     formState: {errors},
   } = useForm();
 
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    // console.log(data);
+    createUser(data.email, data.password)
+      .then((result) => {
+        console.log(result);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
 
   return (
     <div className="hero mt-12">
@@ -86,7 +97,7 @@ const Register = () => {
                 </span>
               )}
               <span
-                className="absolute mt-[50px] ml-72 cursor-pointer text-lg"
+                className="absolute mt-[50px] ml-48 lg:ml-72 cursor-pointer text-lg"
                 onClick={() => setViewPassword(!viewPassword)}
               >
                 {viewPassword ? <FaRegEye /> : <FaRegEyeSlash />}
