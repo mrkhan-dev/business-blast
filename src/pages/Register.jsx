@@ -4,8 +4,10 @@ import {useForm} from "react-hook-form";
 import {useContext, useState} from "react";
 import {AuthContext} from "../FirebaseProvider/AuthProvider";
 import {Helmet} from "react-helmet-async";
+import toast from "react-hot-toast";
 
 const Register = () => {
+  const [regError, setRegError] = useState();
   const [viewPassword, setViewPassword] = useState(null);
   const {createUser} = useContext(AuthContext);
 
@@ -16,12 +18,23 @@ const Register = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    // console.log(data);
-    createUser(data.email, data.password)
+    const {email, password} = data;
+    if (password.length < 6) {
+      setRegError("Password must be 8 character or longer");
+      return;
+    } else if (!/^(?=.*[a-z])(?=.*[A-Z]).*$/.test(password)) {
+      setRegError("Password must be one uppercase & lowercase character");
+      return;
+    }
+
+    setRegError("");
+    createUser(email, password)
       .then((result) => {
+        toast.success("Register Successful");
         console.log(result);
       })
       .catch((error) => {
+        toast.error("This account already in use");
         console.error(error);
       });
   };
@@ -109,6 +122,11 @@ const Register = () => {
               </button>
             </div>
           </form>
+          {regError && (
+            <p className="text-center text-sm text-[#FC6400] mb-3">
+              {regError}
+            </p>
+          )}
           <p className="text-center mb-4">
             Already have an account?{" "}
             <Link to="/login" className="text-[#FC6400]">
