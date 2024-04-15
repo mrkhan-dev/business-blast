@@ -1,7 +1,20 @@
 import {Link, NavLink} from "react-router-dom";
-import userDefaultPic from "../../assets/user.png";
+import {useContext} from "react";
+import {AuthContext} from "../../FirebaseProvider/AuthProvider";
+import toast from "react-hot-toast";
+import {LuUserCircle} from "react-icons/lu";
 
 const Nav = () => {
+  const {user, logOut} = useContext(AuthContext);
+  console.log(user);
+
+  const handleLogOut = () => {
+    logOut().then((result) => {
+      toast.success("Log Out Successful");
+      console.log(result);
+    });
+  };
+
   const navLink = (
     <>
       <li>
@@ -69,18 +82,33 @@ const Nav = () => {
         <ul className="menu menu-horizontal px-1 items-center">{navLink}</ul>
       </div>
       <div className="navbar-end">
-        <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-          <div className="w-10 rounded-full">
-            <img src={userDefaultPic} />
-          </div>
-        </label>
+        {user && (
+          <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+            <div className="w-10 rounded-full">
+              {user.photoURL ? (
+                <img src={user.photoURL} />
+              ) : (
+                <LuUserCircle className="h-full w-full" />
+              )}
+            </div>
+          </label>
+        )}
 
-        <Link
-          to="login"
-          className="btn bg-[#1DD100] text-white px-5 hover:bg-[#1DD100] text-base"
-        >
-          Login
-        </Link>
+        {user ? (
+          <button
+            className="btn bg-[#1DD100] text-white px-5 hover:bg-[#1DD100] text-base"
+            onClick={handleLogOut}
+          >
+            Log Out
+          </button>
+        ) : (
+          <Link
+            to="login"
+            className="btn bg-[#1DD100] text-white px-5 hover:bg-[#1DD100] text-base"
+          >
+            Login
+          </Link>
+        )}
       </div>
     </div>
   );
