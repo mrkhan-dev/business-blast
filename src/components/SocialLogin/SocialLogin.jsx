@@ -2,25 +2,37 @@ import {useContext} from "react";
 import {FaFacebook, FaGithub} from "react-icons/fa";
 import {IoLogoGoogle} from "react-icons/io";
 import {AuthContext} from "../../FirebaseProvider/AuthProvider";
+import {useLocation, useNavigate} from "react-router-dom";
 
 const SocialLogin = () => {
-  const {googleLogin, githubLogin} = useContext(AuthContext);
+  const {googleLogin, facebookLogin, githubLogin} = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const socialLogin = (socialProvider) => {
+    socialProvider().then((result) => {
+      if (result.user) {
+        navigate(location.state || "/");
+      }
+    });
+  };
+
   return (
-    <div>
+    <div className="mb-4">
       <h3 className="text-center divider text-xl font-medium">Login With</h3>
-      <div className="flex justify-center text-2xl gap-4">
+      <div className="flex justify-center text-2xl gap-8">
         <div>
-          <button onClick={() => googleLogin()}>
+          <button onClick={() => socialLogin(googleLogin)}>
             <IoLogoGoogle />
           </button>
         </div>
         <div>
-          <button>
+          <button onClick={() => socialLogin(facebookLogin)}>
             <FaFacebook />
           </button>
         </div>
         <div>
-          <button onClick={() => githubLogin()}>
+          <button onClick={() => socialLogin(githubLogin)}>
             <FaGithub />
           </button>
         </div>

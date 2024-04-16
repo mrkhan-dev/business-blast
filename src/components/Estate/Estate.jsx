@@ -1,6 +1,8 @@
 import PropTypes from "prop-types";
+import {Link} from "react-router-dom";
 const Estate = ({item}) => {
-  const {estate_title, price, status, image, facilities, segment_name} = item;
+  const {estate_title, price, status, image, facilities, segment_name, id} =
+    item;
   return (
     <div>
       <div className="border rounded-2xl mt-8">
@@ -27,9 +29,11 @@ const Estate = ({item}) => {
             </ul>
           ))}
           <div className="card-actions justify-end mb-4">
-            <button className="btn bg-[#1DD100] text-white hover:bg-[#1dd100]">
-              View Property
-            </button>
+            <Link to={`/estateDetails/${id}`}>
+              <button className="btn bg-[#1DD100] text-white hover:bg-[#1dd100]">
+                View Property
+              </button>
+            </Link>
           </div>
         </div>
       </div>

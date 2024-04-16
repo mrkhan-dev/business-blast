@@ -4,6 +4,8 @@ import Home from "../pages/Home";
 import About from "../pages/About";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import EstateDetails from "../pages/EstateDetails/EstateDetails";
+import PrivetRoute from "../components/PrivetRoute/PrivetRoute";
 
 const router = createBrowserRouter([
   {
@@ -14,6 +16,15 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home />,
         loader: () => fetch("data.json"),
+      },
+      {
+        path: "/estateDetails/:id",
+        element: (
+          <PrivetRoute>
+            <EstateDetails />
+          </PrivetRoute>
+        ),
+        loader: () => fetch("../data.json"),
       },
       {
         path: "about",

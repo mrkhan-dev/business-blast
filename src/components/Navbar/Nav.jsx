@@ -6,7 +6,7 @@ import {LuUserCircle} from "react-icons/lu";
 
 const Nav = () => {
   const {user, logOut} = useContext(AuthContext);
-  console.log(user);
+  // console.log(user);
 
   const handleLogOut = () => {
     logOut().then((result) => {

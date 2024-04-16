@@ -1,5 +1,6 @@
 import {
   GithubAuthProvider,
+  FacebookAuthProvider,
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
   onAuthStateChanged,
@@ -14,11 +15,12 @@ import auth from "../firebase/firebase.config";
 export const AuthContext = createContext(null);
 
 const googleProvider = new GoogleAuthProvider();
+const facebookProvider = new FacebookAuthProvider();
 const githubProvider = new GithubAuthProvider();
 
 const AuthProvider = ({children}) => {
   const [user, setUser] = useState(null);
-  console.log(user);
+  // console.log(user);
 
   // create user
   const createUser = (email, password) => {
@@ -35,6 +37,11 @@ const AuthProvider = ({children}) => {
     return signInWithPopup(auth, googleProvider);
   };
 
+  // login with facebook
+  const facebookLogin = () => {
+    return signInWithPopup(auth, facebookProvider);
+  };
+
   // login with github
   const githubLogin = () => {
     return signInWithPopup(auth, githubProvider);
@@ -48,7 +55,7 @@ const AuthProvider = ({children}) => {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      console.log("Observing current user", currentUser);
+      // console.log("Observing current user", currentUser);
       setUser(currentUser);
     });
 
@@ -61,6 +68,7 @@ const AuthProvider = ({children}) => {
     createUser,
     login,
     googleLogin,
+    facebookLogin,
     githubLogin,
     logOut,
     user,
