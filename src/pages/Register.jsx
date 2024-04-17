@@ -1,4 +1,4 @@
-import {Link} from "react-router-dom";
+import {Link, useLocation, useNavigate} from "react-router-dom";
 import {FaRegEye, FaRegEyeSlash} from "react-icons/fa";
 import {useForm} from "react-hook-form";
 import {useContext, useState} from "react";
@@ -9,7 +9,7 @@ import toast from "react-hot-toast";
 const Register = () => {
   const [regError, setRegError] = useState();
   const [viewPassword, setViewPassword] = useState(null);
-  const {createUser} = useContext(AuthContext);
+  const {createUser, updateProfileInfo} = useContext(AuthContext);
 
   const {
     register,
@@ -17,8 +17,12 @@ const Register = () => {
     formState: {errors},
   } = useForm();
 
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const onSubmit = (data) => {
-    const {email, password} = data;
+    const {email, password, name, photo} = data;
+
     if (password.length < 6) {
       setRegError("Password must be 8 character or longer");
       return;
@@ -28,10 +32,14 @@ const Register = () => {
     }
 
     setRegError("");
+    // create user
     createUser(email, password)
-      .then((result) => {
+      .then(() => {
+        updateProfileInfo(name, photo).then(() => {
+          navigate(location?.state || "/");
+        });
+
         toast.success("Register Successful");
-        console.log(result);
       })
       .catch((error) => {
         toast.error("This account already in use");
@@ -92,6 +100,7 @@ const Register = () => {
                 type="text"
                 placeholder="Photo URL"
                 className="input input-bordered"
+                {...register("photo")}
               />
             </div>
             <div className="form-control">

@@ -1,6 +1,6 @@
 import {useContext, useState} from "react";
 import {Helmet} from "react-helmet-async";
-import {Link} from "react-router-dom";
+import {Link, useLocation, useNavigate} from "react-router-dom";
 import {AuthContext} from "../FirebaseProvider/AuthProvider";
 import {useForm} from "react-hook-form";
 import toast from "react-hot-toast";
@@ -17,12 +17,17 @@ const Login = () => {
     formState: {errors},
   } = useForm();
 
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const onSubmit = (data) => {
     const {email, password} = data;
     login(email, password)
       .then((result) => {
+        if (result.user) {
+          navigate(location?.state || "/");
+        }
         toast.success("Login Successful");
-        console.log(result);
       })
       .catch((error) => {
         toast.error("Invalid email & password");

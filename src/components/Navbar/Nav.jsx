@@ -29,6 +29,7 @@ const Nav = () => {
           Home
         </NavLink>
       </li>
+
       <li>
         <NavLink
           className={({isActive}) =>
@@ -39,6 +40,18 @@ const Nav = () => {
           to="/about"
         >
           About
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          className={({isActive}) =>
+            isActive
+              ? "text-md font-semibold px-5 py-3 border border-[#1DD100] text-[#1DD100]"
+              : "text-md font-semibold text-[#131313CC]"
+          }
+          to="/update_profile"
+        >
+          Update Profile
         </NavLink>
       </li>
     </>
@@ -85,12 +98,9 @@ const Nav = () => {
         {user && (
           <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
             <div className="w-10 rounded-full">
-              {user.photoURL ? (
-                <img src={user.photoURL} />
-              ) : (
-                <LuUserCircle className="h-full w-full" />
-              )}
+              <img src={user?.photoURL || <LuUserCircle />} />
             </div>
+            {/* <p>{user.displayName}</p> */}
           </label>
         )}
 

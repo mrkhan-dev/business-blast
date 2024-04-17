@@ -12,7 +12,7 @@ const SocialLogin = () => {
   const socialLogin = (socialProvider) => {
     socialProvider().then((result) => {
       if (result.user) {
-        navigate(location.state || "/");
+        navigate(location?.state || "/");
       }
     });
   };
