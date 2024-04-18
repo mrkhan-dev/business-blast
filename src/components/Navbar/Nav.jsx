@@ -96,7 +96,7 @@ const Nav = () => {
       <div className="navbar-end">
         {user && (
           <div className="tooltip tooltip-left" data-tip={user.displayName}>
-            <img className="h-12 rounded-full" src={user.photoURL} />
+            <img className="h-12 rounded-full" src={user?.photoURL} />
           </div>
         )}
         {user ? (

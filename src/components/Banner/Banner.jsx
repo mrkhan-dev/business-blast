@@ -7,9 +7,7 @@ const Banner = () => {
       style={{
         backgroundImage: `url(${BannerBg})`,
       }}
-    >
-      <div className=""></div>
-    </div>
+    ></div>
   );
 };
 
