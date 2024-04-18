@@ -4,7 +4,7 @@ Welcome to Business Blast
 
 ### Live Website
 
-[visit Luxury Tour](https://business-blast.web.app/)
+[Business Blast](https://business-blast.web.app/)
 
 ### Features
 
