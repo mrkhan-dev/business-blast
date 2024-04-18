@@ -99,7 +99,7 @@ const Nav = () => {
       <div className="navbar-end">
         {user && (
           <div
-            className="tooltip tooltip-bottom rounded-full  border cursor-pointer"
+            className="tooltip tooltip-bottom rounded-full mr-1  border cursor-pointer"
             data-tip={user.displayName}
           >
             {user.photoURL ? (
