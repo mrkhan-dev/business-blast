@@ -41,18 +41,20 @@ const Nav = () => {
           About
         </NavLink>
       </li>
-      <li>
-        <NavLink
-          className={({isActive}) =>
-            isActive
-              ? "text-md font-semibold px-5 py-3 border border-[#1DD100] text-[#1DD100]"
-              : "text-md font-semibold text-[#131313CC]"
-          }
-          to="/update_profile"
-        >
-          Update Profile
-        </NavLink>
-      </li>
+      {user && (
+        <li>
+          <NavLink
+            className={({isActive}) =>
+              isActive
+                ? "text-md font-semibold px-5 py-3 border border-[#1DD100] text-[#1DD100]"
+                : "text-md font-semibold text-[#131313CC]"
+            }
+            to="/update_profile"
+          >
+            Update Profile
+          </NavLink>
+        </li>
+      )}
     </>
   );
 
@@ -95,8 +97,11 @@ const Nav = () => {
       </div>
       <div className="navbar-end">
         {user && (
-          <div className="tooltip tooltip-left" data-tip={user.displayName}>
-            <img className="h-12 rounded-full" src={user?.photoURL} />
+          <div
+            className="tooltip tooltip-bottom rounded-full border cursor-pointer"
+            data-tip={user.displayName}
+          >
+            <img className="h-12 rounded-full" src={user.photoURL} />
           </div>
         )}
         {user ? (

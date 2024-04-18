@@ -1,18 +1,29 @@
 import {Helmet} from "react-helmet-async";
 import {FaFacebook, FaTwitter} from "react-icons/fa";
 import {RiInstagramLine} from "react-icons/ri";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import {useEffect} from "react";
 
 const About = () => {
+  useEffect(() => {
+    AOS.init({duration: 1000});
+    AOS.refresh();
+  }, []);
+
   return (
-    <div className="flex justify-between px-64 mt-8 gap-4">
+    <div
+      data-aos="fade-down"
+      className="lg:flex  justify-between lg:px-64 mt-8 gap-4"
+    >
       <Helmet>
         <title>About | BusinessBlast</title>
       </Helmet>
-      <div className="shadow-md w-1/2 rounded-md">
-        <h1 className="text-4xl text-center font-bold ">
+      <div className="shadow-md lg:w-1/2 rounded-md">
+        <h1 className="text-2xl text-center font-bold ">
           Welcome to Business Blast
         </h1>
-        <p className="px-2 text-lg mb-5 font-medium mt-20">
+        <p className="px-2 lg:text-lg mb-5 font-medium lg:mt-20">
           At Business Blast, we are passionate about supporting entrepreneurs at
           every stage of their journey, from aspiring visionaries with a spark
           of inspiration to seasoned professionals looking to scale their
@@ -35,7 +46,7 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className="w-1/2">
+      <div className="lg:w-1/2">
         <img
           className="lg:h-[564px] rounded-md"
           src="https://i.ibb.co/n89TK8W/cheerful-friends-having-fun-while-talking-waiter-cafe.jpg"

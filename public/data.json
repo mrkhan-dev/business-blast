@@ -18,7 +18,7 @@
     "description": "These retail spaces are strategically located in high-traffic areas, offering prime storefront visibility and foot traffic. Ideal for retail businesses, they provide versatile layouts, ample storage, and customizable interiors to showcase products and attract customers.",
     "price": "$10,000/month",
     "status": "rent",
-    "image": "https://i.ibb.co/hm1MMBv/office-buildings.jpg",
+    "image": "https://i.ibb.co/MVRKtyQ/people-spending-time-gas-station-23-2150440229.jpg",
     "area": "2,500 sq ft",
     "location": "Main Street",
     "facilities": ["Storefront Display", "Storage Room", "Restroom"]
@@ -30,7 +30,7 @@
     "description": "These warehouses offer expansive storage and distribution solutions for businesses requiring industrial space. Featuring high ceilings, loading docks, and flexible layouts, they are ideal for manufacturing, logistics, and inventory management operations.",
     "price": "$3,500,000",
     "status": "sale",
-    "image": "https://i.ibb.co/hm1MMBv/office-buildings.jpg",
+    "image": "https://i.ibb.co/SvBm5td/warehouse.jpg",
     "area": "50,000 sq ft",
     "location": "Industrial Park",
     "facilities": ["Loading Docks", "High Ceilings", "Office Space"]
@@ -42,7 +42,7 @@
     "description": "These specialized industrial facilities provide tailored solutions for manufacturing processes and operations. Equipped with state-of-the-art machinery, assembly lines, and warehouse space, they offer efficiency and scalability for industrial businesses.",
     "price": "$7,000,000",
     "status": "sale",
-    "image": "https://i.ibb.co/hm1MMBv/office-buildings.jpg",
+    "image": "https://i.ibb.co/r5T3jdL/environmental-pollution-factory-exterior-night.jpg",
     "area": "75,000 sq ft",
     "location": "Industrial Zone",
     "facilities": [
@@ -70,7 +70,7 @@
     "description": "These entertainment venues are designed to captivate audiences with live performances, events, and recreational activities. Featuring versatile spaces with stages, seating areas, and bars, they offer endless possibilities for hosting unforgettable experiences.",
     "price": "$20,000,000",
     "status": "sale",
-    "image": "https://i.ibb.co/hm1MMBv/office-buildings.jpg",
+    "image": "https://i.ibb.co/HDY7704/night-club-with-dancing-people-dance-floor-stage-musical-event-mixer-dj-118086-4416.jpg",
     "area": "50,000 sq ft",
     "location": "Entertainment District",
     "facilities": ["Stage", "Seating Area", "Bar"]
@@ -82,7 +82,7 @@
     "description": "These technology parks serve as innovation hubs, providing modern office spaces and collaborative environments for tech startups and established companies. With high-speed internet, conference centers, and fitness facilities, they foster creativity and productivity.",
     "price": "$50,000,000",
     "status": "sale",
-    "image": "https://i.ibb.co/hm1MMBv/office-buildings.jpg",
+    "image": "https://i.ibb.co/VTgVB40/irisdicent-holographic-diorama-cyber-diorama-950002-248838.jpg",
     "area": "100,000 sq ft",
     "location": "Tech District",
     "facilities": [
@@ -98,7 +98,7 @@
     "description": "This commercial land offers a lucrative opportunity for development in a high-traffic area. With its strategic location and ample space, it presents endless possibilities for investors and developers looking to capitalize on prime real estate.",
     "price": "$2,000,000",
     "status": "sale",
-    "image": "https://i.ibb.co/hm1MMBv/office-buildings.jpg",
+    "image": "https://i.ibb.co/sy6R4yd/high-angle-view-landscape-1048944-11495406.jpg",
     "area": "5 acres",
     "location": "Business Corridor",
     "facilities": ["Development Potential", "Road Frontage", "Utilities Access"]
@@ -110,7 +110,7 @@
     "description": "These medical facilities provide comprehensive healthcare services in state-of-the-art environments. Equipped with advanced medical equipment, operating theaters, and patient rooms, they ensure optimal care and comfort for patients.",
     "price": "$15,000,000",
     "status": "sale",
-    "image": "https://i.ibb.co/hm1MMBv/office-buildings.jpg",
+    "image": "https://i.ibb.co/C9srgf9/emergency-hospital-room-135595-539.jpg",
     "area": "60,000 sq ft",
     "location": "Medical Campus",
     "facilities": ["Emergency Rooms", "Operating Theaters", "Patient Rooms"]

@@ -1,4 +1,7 @@
 import {useLoaderData, useParams} from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import {useEffect} from "react";
 
 const EstateDetails = () => {
   const allData = useLoaderData();
@@ -6,39 +9,55 @@ const EstateDetails = () => {
   const idInt = parseInt(id);
   const data = allData.find((data) => data.id === idInt);
   console.log(data);
+
+  useEffect(() => {
+    AOS.init({duration: 1000});
+    AOS.refresh();
+  }, []);
+
   return (
     <div className="lg:w-3/4 mx-auto flex gap-8">
-      <div className="bg-[#1313130D] rounded-xl">
-        <img className="px-8 py-8" src={data.image} />
+      <div data-aos="zoom-in-down">
+        <img className="rounded-lg lg:h-[550px]" src={data.image} />
       </div>
-      <div className="w-1/2">
+      <div data-aos="zoom-in-up" className="w-1/2">
         <h2 className="text-4xl font-medium">{data.estate_title}</h2>
         <p className="text-xl"> segment : {data.segment_name} </p>
         <div className="divider w-[610px]"></div>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa,
-          accusantium beatae! Magnam non quidem dolorem error voluptate? Quidem
-          eius consequuntur suscipit nesciunt quam aspernatur aut nam cum,
-          cupiditate iure blanditiis. Cupiditate, eius accusamus. Odio a
-          delectus explicabo quia. Dolorem quibusdam itaque mollitia praesentium
-          laboriosam pariatur magni eos, tempore voluptatem, accusantium
-          asperiores, quia reprehenderit totam. Dicta officiis dolores
-          exercitationem esse reiciendis odio atque voluptatibus laudantium
-          rerum quae? Iste accusamus voluptatum cupiditate, explicabo
-          necessitatibus quaerat, repellat ullam assumenda nam quo nobis fuga
-          officia dignissimos molestias omnis soluta iusto? Corporis debitis
-          cumquer Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
-          nostrum veniam praesentium? In voluptatibus consequatur ipsam vero
-          ipsum minus facilis, sed eaque quo ex quam totam quia harum. Quae at
-          omnis quibusdam explicabo? Consequuntur cupiditate tenetur,
-          consectetur blanditiis asperiores repudiandae fugiat tempora, mollitia
-          magni deleniti vero provident commodi assumenda dicta error, placeat
-          nisi ex molestias dolores cum? Tenetur deleniti deserunt a incidunt
-          debitis reprehenderit inventore, odit quo libero ullam sed amet ab
-          numquam cum, veritatis veniam eos dolorem minus quisquam, quod
-          cupiditate ex sit ea ad. Consequuntur dolore recusandae repellendus
-          vel mo
-        </p>
+        <div className="text-lg">
+          <p>
+            {" "}
+            <span className="text-xl font-medium">Description :</span>{" "}
+            {data.description}
+          </p>
+          <p className="mt-8">
+            {" "}
+            <span className="text-xl font-medium">Status :</span> {data.status}{" "}
+          </p>
+          <p>
+            {" "}
+            <span className="text-xl font-medium">Price :</span> {data.price}{" "}
+          </p>
+          <p>
+            {" "}
+            <span className="text-xl font-medium">Area : </span> {data.area}{" "}
+          </p>
+          <p>
+            {" "}
+            <span className="text-xl font-medium">Location :</span>{" "}
+            {data.location}
+          </p>
+        </div>
+        <div className="divider w-[610px]"></div>
+        <p className="text-xl font-semibold">Facilities :</p>
+        {data.facilities.map((fec, idx) => (
+          <ul key={idx}>
+            <li className="flex items-center gap-2">
+              <p className="text-4xl mt-[-20px]">.</p>
+              {fec}
+            </li>
+          </ul>
+        ))}
       </div>
     </div>
   );

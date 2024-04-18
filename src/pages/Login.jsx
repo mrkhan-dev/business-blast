@@ -1,4 +1,4 @@
-import {useContext, useState} from "react";
+import {useContext, useEffect, useState} from "react";
 import {Helmet} from "react-helmet-async";
 import {Link, useLocation, useNavigate} from "react-router-dom";
 import {AuthContext} from "../FirebaseProvider/AuthProvider";
@@ -6,10 +6,17 @@ import {useForm} from "react-hook-form";
 import toast from "react-hot-toast";
 import {FaRegEye, FaRegEyeSlash} from "react-icons/fa";
 import SocialLogin from "../components/SocialLogin/SocialLogin";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(null);
   const {login} = useContext(AuthContext);
+
+  useEffect(() => {
+    AOS.init({duration: 1000});
+    AOS.refresh();
+  }, []);
 
   const {
     register,
@@ -40,7 +47,7 @@ const Login = () => {
       <Helmet>
         <title>Login | BusinessBlast</title>
       </Helmet>
-      <div className="hero-content flex-col">
+      <div data-aos="fade-up-left" className="hero-content flex-col">
         <div className="text-center lg:text-left">
           <h1 className="text-5xl font-bold text-[#1DD100]">Login now!</h1>
         </div>
