@@ -16,14 +16,14 @@ const EstateDetails = () => {
   }, []);
 
   return (
-    <div className="lg:w-3/4 mx-auto flex gap-8">
+    <div className="lg:w-3/4 mx-auto lg:flex gap-8">
       <div data-aos="zoom-in-down">
         <img className="rounded-lg lg:h-[550px]" src={data.image} />
       </div>
-      <div data-aos="zoom-in-up" className="w-1/2">
+      <div data-aos="zoom-in-up" className=" lg:w-1/2 w-full px-2 lg:px-0">
         <h2 className="text-4xl font-medium">{data.estate_title}</h2>
         <p className="text-xl"> segment : {data.segment_name} </p>
-        <div className="divider w-[610px]"></div>
+        <div className="divider lg:w-[610px]"></div>
         <div className="text-lg">
           <p>
             {" "}
@@ -48,7 +48,7 @@ const EstateDetails = () => {
             {data.location}
           </p>
         </div>
-        <div className="divider w-[610px]"></div>
+        <div className="divider lg:w-[610px]"></div>
         <p className="text-xl font-semibold">Facilities :</p>
         {data.facilities.map((fec, idx) => (
           <ul key={idx}>
