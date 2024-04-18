@@ -1,15 +1,22 @@
 import {Link, useLocation, useNavigate} from "react-router-dom";
 import {FaRegEye, FaRegEyeSlash} from "react-icons/fa";
 import {useForm} from "react-hook-form";
-import {useContext, useState} from "react";
+import {useContext, useEffect, useState} from "react";
 import {AuthContext} from "../FirebaseProvider/AuthProvider";
 import {Helmet} from "react-helmet-async";
 import toast from "react-hot-toast";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Register = () => {
   const [regError, setRegError] = useState();
   const [viewPassword, setViewPassword] = useState(null);
   const {createUser, updateProfileInfo} = useContext(AuthContext);
+
+  useEffect(() => {
+    AOS.init({duration: 1000});
+    AOS.refresh();
+  }, []);
 
   const {
     register,
@@ -24,7 +31,7 @@ const Register = () => {
     const {email, password, name, photo} = data;
 
     if (password.length < 6) {
-      setRegError("Password must be 8 character or longer");
+      setRegError("Password must be 6 character or longer");
       return;
     } else if (!/^(?=.*[a-z])(?=.*[A-Z]).*$/.test(password)) {
       setRegError("Password must be one uppercase & lowercase character");
@@ -48,7 +55,7 @@ const Register = () => {
   };
 
   return (
-    <div className="hero mt-12">
+    <div className="hero mt-12" data-aos="zoom-in-up">
       <Helmet>
         <title>Register | BusinessBlast</title>
       </Helmet>

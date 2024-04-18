@@ -2,6 +2,7 @@ import {Link, NavLink} from "react-router-dom";
 import {useContext} from "react";
 import {AuthContext} from "../../FirebaseProvider/AuthProvider";
 import toast from "react-hot-toast";
+import {LuUserCircle} from "react-icons/lu";
 
 const Nav = () => {
   const {user, logOut} = useContext(AuthContext);
@@ -98,10 +99,17 @@ const Nav = () => {
       <div className="navbar-end">
         {user && (
           <div
-            className="tooltip tooltip-bottom rounded-full border cursor-pointer"
+            className="tooltip tooltip-bottom rounded-full  border cursor-pointer"
             data-tip={user.displayName}
           >
-            <img className="h-12 rounded-full" src={user.photoURL} />
+            {user.photoURL ? (
+              <img className="h-12 w-12 rounded-full" src={user.photoURL} />
+            ) : (
+              <LuUserCircle
+                className="h-12 w-12 tooltip tooltip-bottom"
+                data-tip={user.displayName}
+              />
+            )}
           </div>
         )}
         {user ? (

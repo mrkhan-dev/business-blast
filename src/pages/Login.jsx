@@ -47,7 +47,7 @@ const Login = () => {
       <Helmet>
         <title>Login | BusinessBlast</title>
       </Helmet>
-      <div data-aos="fade-up-left" className="hero-content flex-col">
+      <div data-aos="zoom-in-up" className="hero-content flex-col">
         <div className="text-center lg:text-left">
           <h1 className="text-5xl font-bold text-[#1DD100]">Login now!</h1>
         </div>

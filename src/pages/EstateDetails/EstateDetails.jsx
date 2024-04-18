@@ -17,7 +17,7 @@ const EstateDetails = () => {
 
   return (
     <div className="lg:w-3/4 mx-auto lg:flex gap-8">
-      <div data-aos="zoom-in-down">
+      <div data-aos="zoom-in-up">
         <img className="rounded-lg lg:h-[550px]" src={data.image} />
       </div>
       <div data-aos="zoom-in-up" className=" lg:w-1/2 w-full px-2 lg:px-0">

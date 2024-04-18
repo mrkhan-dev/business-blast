@@ -39,7 +39,7 @@ const UpdateProfile = () => {
   };
 
   return (
-    <div data-aos="fade-up-left">
+    <div data-aos="zoom-in-up">
       <Helmet>
         <title>Update Profile | BusinessBlast</title>
       </Helmet>
