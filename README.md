@@ -1,31 +1,31 @@
 # Business Blast
 
-Welcome to WSP Luxury a fully responsively website property's management and real estate services . This README file providers an overview of the website features, functionality and deployment details.
+Welcome to Business Blast
 
-### Website Link
+### Live Website
 
-[visit Luxury Tour]()
+[visit Luxury Tour](https://business-blast.web.app/)
 
 ### Features
 
-#### 1. properties cart and viwe property page :
+#### 1. properties cart and view property page :
 
-- Explore a curated selection of properties and viwe details information about each property.
+- Explore a curated selection of properties and view details information about each property.
 
-#### 2. Page :
+#### 2. Pages :
 
 - Home Page
-- Contact Us Page
-- Update Profile Page (private)
-- User Profile Page (private)
-- Loigin Page
+- About page
+- Update Profile Page (private & conditional)
+- User Profile Page (conditional)
+- Login Page
 - Register Page
 
 #### 3. Authentication :
 
 - Firebase Auth System
 - Email and password-Based Authentication
-- Google and GitHub Login integration
+- Google, facebook and GitHub Login integration
 - Register page with validation (password:Uppercase,Lowercase,Minimum length of 6 characters)
 - Login page with Error Handling
 - Deployed Website on Firebase
@@ -35,7 +35,7 @@ Welcome to WSP Luxury a fully responsively website property's management and rea
 - Unique Design
 - Sections Home Update Profile (Private).user profile(Private) and (conditional)
 - User Profile display user img and name when logged in
-- Logout Functionality
+- implement Logout Functionality
 
 #### 5. Slider :
 
@@ -48,32 +48,14 @@ Welcome to WSP Luxury a fully responsively website property's management and rea
 
 #### 7. 404 Page:
 
-- custom page for not found error's
+- Invalid link for error page
 
 #### 8. Dynamic Title :
 
-- page title Dynamically set for each page
+- Dynamic title for every page
 
 #### 9. External Packages :
 
 - Utilized `aos` package for animations
-- Utilized `Animated Css` package for animations
 - Utilized `swiper slider` package for animations
-
-#### 10. Firebase package :
-
-- Importanted protected route for user profile editing and saving using firebase updateProfile() method
-
-#### 11. Image store :
-
-- Hosted JSON data and images on immgbb
-
-## Deployment
-
-The website is deployed on Firebase and is accessible via the following Link : []
-
-## Contributors
-
-- {Farabi Hassan}
-
-## Feedback
+- Utilized `react hook form` package for animations
